@@ -16,7 +16,7 @@ const TimerView = () => {
 
   return (
     <View style={styles.TimerView}>
-      <Text style={[styles.textMarginTop,styles.TimeText]}>计时器</Text>
+      <Text style={[styles.textMarginTop, styles.TimeText]}>计时器</Text>
       <Text style={styles.TimeText}>{num}</Text>
     </View>
   );
@@ -25,17 +25,16 @@ const TimerView = () => {
 const styles = StyleSheet.create({
   TimerView: {
     height: '100%',
-    backgroundColor: '#000'
+    backgroundColor: '#000',
   },
-  textMarginTop:{
-    marginTop: 20
+  textMarginTop: {
+    marginTop: 20,
   },
   TimeText: {
     color: '#1d67f7',
     fontSize: 70,
-    textAlign:'center'
-    
-  }
+    textAlign: 'center',
+  },
 });
 
 export default TimerView;
