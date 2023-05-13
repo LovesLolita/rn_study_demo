@@ -6,13 +6,17 @@
  */
 
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
-import TimerView from './src/components/TimerView'
+import {Text, View, SafeAreaView, StyleSheet} from 'react-native';
+import TimerView from './src/components/TimerView';
 
 const App = () => {
-  return <View style={styles.sectionContainer}>
-    <TimerView></TimerView>
-  </View>;
+  return (
+    <SafeAreaView>
+      <View style={styles.sectionContainer}>
+        <TimerView></TimerView>
+      </View>
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
