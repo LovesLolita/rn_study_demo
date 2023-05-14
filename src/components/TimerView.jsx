@@ -52,7 +52,7 @@ const TimerView = () => {
       <TextInput
                 ref={inputRef}
                 style={styles.input}
-                autoFocus={true}
+                autoFocus={false}
                 blurOnSubmit={true}
                 caretHidden={false}
                 defaultValue="默认内容"
@@ -75,9 +75,9 @@ const TimerView = () => {
                     console.log(text);
                 }}
                 // selection={{start: 0, end: 3}}
-                selectionColor='red'
-                selectTextOnFocus={true}
-                secureTextEntry={true}
+                selectionColor='#ccc'
+                // selectTextOnFocus={true}
+                // secureTextEntry={true}
             />
       <Image
         source={girlImgTwo}
