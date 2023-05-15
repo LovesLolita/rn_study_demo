@@ -5,7 +5,7 @@ import {
   Text,
   Image,
   ImageBackground,
-  TextInput,
+  TouchableHighlight,
 } from 'react-native';
 import girlImg from '../assets/img/girl.jpg';
 import girlImgTwo from '../assets/img/girl2.png';
@@ -13,17 +13,9 @@ import bg_card from '../assets/images/bg_card.png';
 import icon_bank from '../assets/images/icon_bank.png';
 
 const TimerView = () => {
-  const [num, setNum] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setNum(pre => pre + 2);
-    }, 1000);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
+  const [count, setCount] = useState(0);
+  const onPress = () => setCount(prevCount => prevCount + 1);
 
   const viewRef = useRef(null);
   const TimerViewLayOut = e => {
@@ -39,48 +31,22 @@ const TimerView = () => {
       });
     }, 2000);
   }, []);
-  // input
-  const inputRef = useRef(null);
-
-  useEffect(() => {
-    setTimeout(() => {
-      // inputRef.current.blur();
-    }, 2000);
-  }, []);
 
   return (
     <View
       ref={viewRef}
       style={styles.TimerView}
       onLayout={e => TimerViewLayOut(e)}>
-      <Text style={[styles.textMarginTop, styles.TimeText]}>计时器</Text>
-      <Text style={styles.TimeText}>{num}</Text>
-      <TextInput
-        ref={inputRef}
-        style={styles.input}
-        autoFocus={false}
-        blurOnSubmit={true}
-        caretHidden={false}
-        defaultValue="默认内容"
-        editable={true}
-        keyboardType="number-pad"
-        returnKeyType="search"
-        // maxLength={11}
-        // multiline={true}
-        // numberOfLines={2}
-        onFocus={() => {}}
-        onBlur={() => {}}
-        onChange={event => {
-          console.log(event.nativeEvent);
-        }}
-        onChangeText={text => {
-          console.log(text);
-        }}
-        // selection={{start: 0, end: 3}}
-        selectionColor="#ccc"
-        // selectTextOnFocus={true}
-        // secureTextEntry={true}
-      />
+          <TouchableHighlight onPress={onPress}>
+        <View style={styles.button}>
+          <Text>Touch Here</Text>
+        </View>
+      </TouchableHighlight>
+      <View style={styles.countContainer}>
+        <Text style={styles.countText}>
+          {count ? count : null}
+        </Text>
+      </View>
       <Image
         source={girlImgTwo}
         style={styles.img}
@@ -114,6 +80,18 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: '#000',
     flexDirection: 'column',
+  },
+  button: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10
+  },
+  countContainer: {
+    alignItems: "center",
+    padding: 10
+  },
+  countText: {
+    color: "#FF00FF"
   },
   textMarginTop: {
     marginTop: 20,
