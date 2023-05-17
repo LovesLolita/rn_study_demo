@@ -78,7 +78,7 @@ export default () => {
       ItemSeparatorComponent={<View style={styles.separator} />}
       initialNumToRender={15}
       inverted={false}
-      numColumns={1}
+      numColumns={2}
       // onViewableItemsChanged={(info) => {
       //     const { viewableItems } = info;
       //     console.log(viewableItems);
