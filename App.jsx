@@ -8,12 +8,16 @@
 import React from 'react';
 import {Text, View, SafeAreaView, StyleSheet} from 'react-native';
 import TimerView from './src/components/TimerView';
+import ScrollViewDemo from './src/components/ScrollViewDemo'
+import FlatListDemo from './src/components/FlatListDemo'
 
 const App = () => {
   return (
     <SafeAreaView>
       <View style={styles.sectionContainer}>
-        <TimerView></TimerView>
+        {/* <TimerView></TimerView> */}
+        {/* <ScrollViewDemo></ScrollViewDemo> */}
+        <FlatListDemo />
       </View>
     </SafeAreaView>
   );
